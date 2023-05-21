@@ -59,6 +59,19 @@ export default function MinhasRefeicoes({navigation}){
                       </Text>
                     </Icon.Button>
             </View>
+
+            <View style={estilos.botaoRefeicao}>
+                    <Icon.Button style={estilos.refeicao}
+                      name="cutlery"
+                      size= {20}
+                      color="#fff"
+                      backgroundColor= '#BDB76B'
+                      onPress={() => navigation.navigate('Login')}>
+                      <Text style={{fontSize: 12, color: 'white' }}>
+                      Refeições
+                      </Text>
+                    </Icon.Button>
+            </View>
         </LinearGradient>
     );
 }
@@ -106,6 +119,27 @@ export default function MinhasRefeicoes({navigation}){
             
           },
 
+          botaoRefeicao:{
+            position: 'absolute',
+            width: 212,
+            height: 40,
+            fontSize: '25%',
+            alignItems: 'center',
+            justifyContent: 'center',
+            right: 185,
+            bottom: 45,
+            padding: 2,
+            elevation: 2,
+            zIndex: 9,
+            shadowColor: '#000',
+            shadowOpacity: 0.2,
+            shadowOffset:{
+                width: 1,
+                height: 3
+            }
+            
+          },
+
           title: {
             fontSize: 25,
             color: 'black',
@@ -114,6 +148,16 @@ export default function MinhasRefeicoes({navigation}){
           },
 
           lupa: {
+            
+            width: 80,
+            height: 50,
+            marginLeft: 15,
+            marginRight: 15,
+            verticalAlign: 'center',
+            justifyContent: 'center'
+          },
+
+          refeicao: {
             
             width: 80,
             height: 50,

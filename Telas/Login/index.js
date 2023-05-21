@@ -22,7 +22,7 @@ import { LinearGradient } from 'expo-linear-gradient';
                 
                 
                 <View style={estilos.item_login}>
-                  <Image source={require('../Imagens/tacoImagem.jpeg')} style={estilos.logo}></Image>
+                  <Image source={require('../Imagens/nutrinforImagem.png')} style={estilos.logo}></Image>
                   <View style={estilos.espaco}>
                       <Text style={estilos.titulo1}>Crie,</Text>
                       <Text style={estilos.titulo2}>Sua conta!</Text>
