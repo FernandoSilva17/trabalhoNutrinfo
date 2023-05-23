@@ -1,38 +1,39 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 
-import Login from './Telas/Login';
-import MinhasRefeicoes from './Telas/MinhasRefeicoes';
-//import CriarConta from './Telas/CriarConta';
-//import VamosComecar from './Telas/VamosComecar';
+import Login from './paginas/login'
+import Cadastro from './paginas/cadastrar'
+import TelaPrincipal from './paginas/telaPrincipal'
 
+const Stack = createStackNavigator();
 
-const Drawer = createDrawerNavigator(); 
+function Home(){
+  return(
+    <Stack.Navigator
+    initialRouteName=''
+    screenOptions={{
+      headerTitleAlign: 'center',
+      headerStyle:{
+        backgroundColor: 'blue'
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold'
+      }
+    }}
+    >
+      
+      <Stack.Screen name='Login' component={Login} options={{title: 'Login'}}/>
+      <Stack.Screen name='Cadastro' component={Cadastro} options={{title: 'CadastrarUsuario'}}/>
+      <Stack.Screen name='Home' component={TelaPrincipal} options={{title: 'TelaPrincipal'}}/>
+    </Stack.Navigator>
+  )
+}
 
-export default function App() {
-  return (
+export default function App(){
+  return(
     <NavigationContainer>
-    <Drawer.Navigator >
-        <Drawer.Screen
-        name='Login'
-        component={Login}
-        options={{
-          title: 'LOGIN',
-          headerStyle: {
-            backgroundColor: '#B0C4DE'
-          },
-          headerTintColor: 'white',
-          headerShown: false
-        }}/>
-        <Drawer.Screen 
-        name='MinhasRefeicoes'
-        component={MinhasRefeicoes}
-        options={{headerShown: false
-        }}
-        />
-        
-      </Drawer.Navigator>
+    <Home/>
     </NavigationContainer>
-  );
+  )
 }
